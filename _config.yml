@@ -4,8 +4,8 @@ url: http://thebasics.siteleaf.net
 timezone: Pacific/Auckland
 collections:
   balls:
-      title: Balls
-      output: true
+    title: Balls
+    output: true
   posts:
     title: Posts
     output: true
