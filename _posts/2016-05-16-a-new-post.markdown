@@ -1,0 +1,6 @@
+---
+title: A new post
+date: 2016-05-16 22:48:00 +12:00
+---
+
+This is a blog post.
