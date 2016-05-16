@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta name="generator" content="Siteleaf, http://siteleaf.com" />
+  <title>{{page.title}} | {{site.title}}</title>
+  <link rel="canonical" href="{{permalink}}" />
+  <link rel="alternate" type="application/rss+xml" href="{{site.feed_url}}" />
+  <link rel="stylesheet" type="text/css" href="/assets/styles/global.css" />
+</head>
+<body>
+
+
+
+
+  <header class="header" role="header">
+          <span class="header__logo">
+            <a href="/">{{ site.title }}</a>
+          </span>
+          <nav class="nav header__nav">
+            <ul class="nav__list nav__list--right">
+              {% for page in site.pages %}
+                {% if page.title and page.title != "Information" %}
+                  <li class="nav__item">
+                    <a class="nav__link" href="{{ page.url }}">{{ page.title }}</a>
+                  </li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          </nav>
+        </header>
+
+
+
+
+{{ page.title }}
+  {{ content }}
+  {{ page.footer_scripts }}
+
+
+
+</body>
+</html>
