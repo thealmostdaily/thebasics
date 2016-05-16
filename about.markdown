@@ -4,7 +4,7 @@ date: 2016-05-16 19:14:00 +12:00
 layout: pages
 ---
 
-# An About Page
+# This is an About Page
 
 ![bball2.png](/uploads/bball2.png)
 
