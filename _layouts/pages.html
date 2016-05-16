@@ -39,12 +39,24 @@
   {{ page.footer_scripts }}
 
 
-  {% for document in site.balls %}
 
-    <h2>{{ document.title }}</h2>
-    <p>{{ document.content }}</p>
 
+  <ul>
+    {% for document in site.balls %}
+      <li>
+        <a href="{{ balls.url }}">{{ balls.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+
+
+  <ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
   {% endfor %}
+</ul>
 
 
 
