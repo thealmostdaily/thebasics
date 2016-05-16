@@ -1,6 +1,7 @@
 ---
 title: Document
 date: 2016-05-16 21:37:00 +12:00
+layout: pages
 ---
 
 # Document
