@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta name="generator" content="Siteleaf, http://siteleaf.com" />
+  <title>{{page.title}} | {{site.title}}</title>
+  <link rel="canonical" href="{{permalink}}" />
+  <link rel="alternate" type="application/rss+xml" href="{{site.feed_url}}" />
+  <link rel="stylesheet" type="text/css" href="/assets/styles/global.css" />
+</head>
+<body>
+
+  <div class="wrap">
+   <!--  <header class="primary-header"> -->
+
+
+    <section class="content">
+      {{ page.title }}
+
+
+
+      <h1 class="content-title">{{title}}</h1>
+      {% if pages %}
+        {% comment %} Show subpages if there are any available {% endcomment %}
+
+
+        <nav class="subpage-menu">
+        <ul>  {% for subpage in pages %}
+           <li> <a href="{{subpage.url}}">{{subpage.title}}</a>
+           </li>
+          {% endfor %}
+          </ul>
+        </nav>
+
+      {% endif %}
+
+<!-- LOOPING ASSETS with meta data
+
+{% for asset in assets %}
+    {% if asset.type == 'image'%}
+
+    <img src="{{asset.url}}" {% if asset.meta.class %} class="{{ asset.meta.class }}"{% endif %}><br>
+
+<figcaption>{{asset.meta.worktitle}}<br>{{asset.meta.workmedium}}</figcaption>
+
+    {% elsif asset.type == 'audio' %}
+    <audio><source src="{{asset.url}}" type="{{asset.content_type}}"></audio>
+    {% elsif asset.type == 'video' %}
+    <video><source src="{{asset.url}}" type="{{asset.content_type}}"></video>
+    {% elsif asset.type == 'other' %}
+    <a href="{{asset.url}}">Download {{asset.filename}}</a></li>
+    {% endif %}
+
+
+
+  {% endfor %}
+
+-->
+
+
+      {{body}}
+
+
+
+
+      {% if type == "post" %}
+        {% comment %} Show tagsets if this is a post {% endcomment %}
+
+        {% for tagset in taxonomy %}<br>
+       {{tagset.key}} ({{tagset | size}} tags)
+          <ul>
+            {% for tag in tagset %}
+              <li><a href="{{tag.url}}">{{tag.value}}</a></li>
+            {% endfor %}
+          </ul>
+        {% endfor %}
+
+      {% else %}
+        <!--
+        {% comment %} Loop through any posts and show an excerpt {% endcomment %}
+        {% for post in posts  limit: meta.limit.value %}
+          <article class="post-preview">
+            <h2><a href="{{post.url}}">{{post.title}}</a> <span class="dat">{{post.date | date: "%b %d, %Y"}}</span></h2>
+
+            {{post.body | strip_html | truncatewords: 50}}
+         <p><a href="{{post.url}}">View post</a></p>
+          </article>
+        {% endfor %}
+        -->
+
+         {% comment %} Just the posts {% endcomment %}
+        {% for post in posts  limit: meta.limit.value %}
+          <article class="post" >
+            <h2><a href="{{post.url}}">{{post.title}}</a> <span class="dat">{{post.date | date: "%b %d, %Y"}}</span></h2><br>
+
+            {{post.body}}
+
+          </article>
+        {% endfor %}
+
+      {% endif %}
+
+      {% if parent %}
+        <p  class="backspacer"><a href="{{parent.url}}">&larr;<!-- to {{parent.title}} --></a></p>
+
+
+{% else if type == "page" %}
+        <p class="backspacer"><a href="/">&larr;<!-- to {{parent.title}} --></a></p>
+       {% endif %}
+
+
+<!--  <ul>
+      {% for page in site.pages %}
+        <li><a href="{{page.url}}"{% if page.url == url %} class="is-current-page"{% endif %}>{{page.title}}</a></li>
+      {% endfor %}
+      </ul>  -->
+
+
+
+
+    </section><!-- /content -->
+
+<footer></footer>
+
+  </div><!-- /wrap -->
+</body>
+</html>
