@@ -6,6 +6,9 @@ collections:
   a-collection-of-basketballs:
     title: A collection of basketballs
     output: true
+  balls:
+      title: Balls
+      output: true
   posts:
     title: Posts
     output: true
