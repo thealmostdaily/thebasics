@@ -6,8 +6,8 @@
   box-sizing: border-box; }
 
 body {
-  background: red;
-  color: #darkgrey; }
+  background: #000;
+  color: darkgrey; }
 
 h1, h2, h3, p {
-  font-family: helvetica, sans-serif; }
+  font-family: Helvetica, sans-serif; }
