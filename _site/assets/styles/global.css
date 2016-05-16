@@ -6,9 +6,8 @@
   box-sizing: border-box; }
 
 body {
-  background: #000;
-  color: #fff; }
+  background: red;
+  color: #darkgrey; }
 
-p {
-  font-family: helvetica, sans-serif;
-  color: #ffcccc; }
+h1, h2, h3, p {
+  font-family: helvetica, sans-serif; }
