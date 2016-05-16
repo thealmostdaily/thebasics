@@ -2,18 +2,19 @@
 ---
 
 @import 'toolbox';
+@import 'variables';
 
 * {
   @include box-sizing(border-box)
 }
 
 body{
-  background: red;
-  color: #darkgrey;
+  background: $bright;
+  color: darkgrey;
 
 }
 
 
-h1, h2, h3, p {  font-family: helvetica, sans-serif;
+h1, h2, h3, p { font-family: $font-stack;
 
 }
